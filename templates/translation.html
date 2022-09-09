@@ -1,0 +1,23 @@
+<label id="value_lable">
+    <textarea readonly font-family= "inherit" font-size= "inherit" style="resize:none" cols="50" rows="7" name="t" id="translationarea">{{ translation }}</textarea>
+</label>
+<form action="{{ url_for('evaluation')}}" method="get">
+    <p>
+      <h5>Du kannst Platt? Hölp den Översetter as Schoolmeester:</h5>
+      <label>Översettung is</label><br>
+      <label>
+          <input type="radio" name="feedback" value="richtig" required>
+          richtig
+      </label>
+      <br>
+      <label>
+          <input type="radio" name="feedback" value="falsch" required>
+          verkehrt
+        </label>
+    </p>
+   <input type="hidden" name="translation" value= "{{ translation }}" />
+   <input type="hidden" name="sentence" value= "{{ sentence }}" />
+   <p>
+           <button>absenden</button>
+   </p>
+   </form>
