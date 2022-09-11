@@ -61,21 +61,28 @@
       <script>
       $("#loader").hide();
       $(".lds-ellipsis").hide();
+      var start_time = new Date().getTime();         
       function translate() {
-          $(".lds-ellipsis").show();
-          var lang_selection = $("#lang_selection").val();
-          var text = $("#custom").val();
-            $.ajax({
-              url: "/translation",
-              type: "get",
-              data: {jsdata: text, lang: lang_selection},
-              success: function(response) {
-                $("#place_for_translation").html(response);
-                $(".lds-ellipsis").hide();
-              },
-              error: function(xhr) {
-              }
-            })};
+          var new_time = new Date().getTime()
+          var seconds_between_translations = Math.abs(new_time - start_time) / 1000
+          if (seconds_between_translations > 1) {
+            $(".lds-ellipsis").show();
+            var lang_selection = $("#lang_selection").val();
+            var text = $("#custom").val();
+              $.ajax({
+                url: "/translation",
+                type: "get",
+                data: {jsdata: text, lang: lang_selection},
+                success: function(response) {
+                  $("#place_for_translation").html(response);
+                  $(".lds-ellipsis").hide();
+                  start_time = new Date().getTime();
+                },
+                error: function(xhr) {
+                }
+              })
+            }
+          };
       function delay(callback, ms) {
         var timer = 0;
         return function() {
