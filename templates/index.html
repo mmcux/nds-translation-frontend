@@ -52,7 +52,7 @@
       </select>
       <br>
       <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-      <textarea font-family= "inherit" font-size= "inherit" style="resize:none" cols="50" rows="7" id="custom" name="q" contenteditable="true" placeholder="Dein Satz" maxlength="450">{{ predefined_input }}</textarea>
+      <textarea font-family= "inherit" font-size= "inherit" style="resize:none" cols="50" rows="7" id="custom" name="q" contenteditable="true" placeholder="Dein Satz" maxlength="300">{{ predefined_input }}</textarea>
       
       <div id="place_for_translation">
         <textarea disabled font-family= "inherit" font-size= "inherit" style="resize:none" cols="50" rows="7" name="t" placeholder="Dien Satz op platt"></textarea>
@@ -96,7 +96,7 @@
       $('#custom').on("input",
         delay(
           translate
-          , 1000 + 1000 * ($('#custom').length) * 0.1)
+          , 1000)
           );
       </script>
       {% if predefined_input %}

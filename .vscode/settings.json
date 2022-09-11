@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d2e33273-e931-4183-9272-dfb999727c7f/microsoft.web/sites/subscriptions/d2e33273-e931-4183-9272-dfb999727c7f/resourceGroups/oeversetter-rg/providers/Microsoft.Web/sites/oeverwebapp",
+    "appService.deploySubpath": "."
+}

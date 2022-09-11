@@ -255,7 +255,7 @@ def correction():
 @app.route('/translation')
 def suggestions():
     text = request.args.get('jsdata')
-    text = text.strip()
+    text = text.strip()[:300]
     lang = request.args.get('lang')
     sessionID = request.cookies.get('sessionID')
     start_user_info = datetime.now()
